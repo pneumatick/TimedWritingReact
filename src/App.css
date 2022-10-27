@@ -10,10 +10,20 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(0, 255, 0);
+  color: rgb(255, 255, 255);
 }
 
-.Timer-header {
-  position: relative;
-  top: 10%;
+.Timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50vw;
+}
+
+.Past-works {
+  margin: 10vh 0 0 0;
+}
+
+.Past-works-table {
+  width: 50vw;
 }

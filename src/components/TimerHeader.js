@@ -4,7 +4,7 @@ class TimerHeader extends React.Component {
     render() {
         return (
             <div className="Timer-header">
-                <h1>Timed Writing</h1>
+                <p>Timer header (is this necessary?)</p>
             </div>
         );
     }

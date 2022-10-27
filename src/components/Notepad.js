@@ -5,7 +5,7 @@ class Notepad extends React.Component {
         return (
             <textarea 
                 disabled={this.props.disabled} 
-                placeholder="Start writing..." 
+                placeholder={this.props.disabled ? "Press 'Start' to write." : "Start writing..."}
                 onChange={this.props.onChange}
                 value={this.props.value}
             />

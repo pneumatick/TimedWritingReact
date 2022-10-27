@@ -7,8 +7,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  margin: 5vh 0;
+}
+
 p {
-  margin: 30px 0 8px 0;
+  margin: 10px 0;
+  color: rgb(0, 255, 0);
 }
 
 button {
@@ -18,7 +23,7 @@ button {
   background: black;
   color: rgb(0, 255, 0);
   border-radius: 5px;
-  border: solid 1px white;
+  border: solid 2px white;
 }
 
 button:hover {
@@ -30,9 +35,10 @@ button:active {
 }
 
 textarea {
-  width: 50vw;
+  width: 49.5vw;
   height: 25vh;
-  margin: 24px;
+  margin: 5px 0;
+  border: ridge 4px white;
   border-radius: 5px;
   font-size: 0.66em;
   background-color: black;
@@ -41,4 +47,18 @@ textarea {
 
 textarea:disabled {
   color: rgba(0, 255, 0, 0.5);
+}
+
+table {
+  border: ridge 4px white;
+  border-spacing: 0;
+  border-radius: 5px;
+  background-color: black;
+}
+
+td {
+  width: 250px;
+  height: 150px;
+  border: dotted 1px green;
+  background-color: black;
 }

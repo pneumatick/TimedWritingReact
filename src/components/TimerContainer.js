@@ -1,5 +1,4 @@
 import React from 'react';
-import TimerHeader from './TimerHeader';
 import Timer from './Timer';
 
 const DEFAULT_TIME = 300;   // Unit: seconds
@@ -41,8 +40,7 @@ class TimerContainer extends React.Component {
 
     render() {
         return (
-            <div>
-                <TimerHeader  />
+            <div className='Timer-container'>
                 <Timer 
                     writeTime={this.state.time}
                     started={!this.props.disabled}

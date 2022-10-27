@@ -1,14 +1,18 @@
 import './App.css';
 import React from 'react';
+import AppHeader from './components/AppHeader';
 import TimerContainer from './components/TimerContainer';
 import Notepad from './components/Notepad';
+import PastWorks from './components/PastWorks';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       disabled: true,
-      text: ''
+      text: '',
+      numWorks: 0,
+      works: []
     };
 
     this.toggleWriting = this.toggleWriting.bind(this);
@@ -34,13 +38,17 @@ class App extends React.Component {
 
   // Show the user the result of their writing
   presentOutcome() {
-    alert(this.state.text);
+    this.setState({
+      numWorks: this.state.numWorks + 1,
+      works: [...this.state.works, this.state.text]
+    });
   }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
+          <AppHeader />
           <TimerContainer
             disabled={this.state.disabled}
             toggleWriting={this.toggleWriting}
@@ -50,6 +58,10 @@ class App extends React.Component {
             disabled={this.state.disabled} 
             onChange={this.handleChange}
             value={this.state.text} 
+          />
+          <PastWorks
+            numWorks={this.state.numWorks}
+            works={this.state.works}          
           />
         </header>
       </div>
