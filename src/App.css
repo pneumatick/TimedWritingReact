@@ -27,3 +27,53 @@
 .Past-works-table {
   width: 50vw;
 }
+
+.work-preview {
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-elements {
+  background-color: black;
+  margin: 15% auto;
+  padding: 20px;
+  border: ridge 4px white;
+  width: 80%;
+}
+
+.modal-text {
+  font-size: 0.66em;
+  white-space: pre-wrap;
+  text-align: start;
+}
+
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #bbb;
+text-decoration: none;
+cursor: pointer;
+}

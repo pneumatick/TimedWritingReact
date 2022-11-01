@@ -17,7 +17,7 @@ class App extends React.Component {
 
     this.toggleWriting = this.toggleWriting.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.presentOutcome = this.presentOutcome.bind(this);
+    this.saveWork = this.saveWork.bind(this);
   }
 
   // Start the timer, clear the text area, and let the user write
@@ -36,8 +36,8 @@ class App extends React.Component {
     this.setState({ text: e.target.value });
   }
 
-  // Show the user the result of their writing
-  presentOutcome() {
+  // Save the user's work
+  saveWork() {
     this.setState({
       numWorks: this.state.numWorks + 1,
       works: [...this.state.works, this.state.text]
@@ -52,7 +52,7 @@ class App extends React.Component {
           <TimerContainer
             disabled={this.state.disabled}
             toggleWriting={this.toggleWriting}
-            presentOutcome={this.presentOutcome}
+            saveWork={this.saveWork}
           />
           <Notepad 
             disabled={this.state.disabled} 

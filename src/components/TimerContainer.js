@@ -30,7 +30,7 @@ class TimerContainer extends React.Component {
                 active: false 
             });
             if (this.state.time <= 0) { this.props.toggleWriting(); }
-            this.props.presentOutcome();
+            this.props.saveWork();
         }
     }
 
