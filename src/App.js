@@ -3,7 +3,7 @@ import React from 'react';
 import AppHeader from './components/AppHeader';
 import TimerContainer from './components/TimerContainer';
 import Notepad from './components/Notepad';
-import PastWorks from './components/PastWorks';
+import PastWorksContainer from './components/PastWorksContainer';
 
 class App extends React.Component {
   constructor(props) {
@@ -59,7 +59,7 @@ class App extends React.Component {
             onChange={this.handleChange}
             value={this.state.text} 
           />
-          <PastWorks
+          <PastWorksContainer
             numWorks={this.state.numWorks}
             works={this.state.works}          
           />

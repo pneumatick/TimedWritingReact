@@ -52,10 +52,11 @@
 
 .modal-elements {
   background-color: black;
+  width: 80%;
   margin: 15% auto;
   padding: 20px;
   border: ridge 4px white;
-  width: 80%;
+  border-radius: 5px;
 }
 
 .modal-text {

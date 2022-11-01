@@ -1,16 +1,64 @@
 import React from 'react';
 import Timer from './Timer';
 
-const DEFAULT_TIME = 300;   // Unit: seconds
+// Unit: seconds
+const VERY_SHORT = 60;
+const SHORT = 300;
+const MODERATE = 600;
+const LONG = 1800;
+const VERY_LONG = 3600;
 
 class TimerContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            time: DEFAULT_TIME,
+            time: SHORT,
+            prevTime: SHORT,
             active: false,
             interval: null
-         };
+        };
+
+        this.changeTime = this.changeTime.bind(this);
+    }
+
+    changeTime(e) {
+        let selection = e.target.value;
+
+        switch (selection) {
+            case 'very-short':
+                this.setState({ 
+                    time: VERY_SHORT,
+                    prevTime: VERY_SHORT
+                });
+                break;
+            case 'short':
+                this.setState({ 
+                    time: SHORT,
+                    prevTime: SHORT
+                });
+                break;
+            case 'moderate':
+                this.setState({ 
+                    time: MODERATE,
+                    prevTime: MODERATE
+                });
+                break;
+            case 'long':
+                this.setState({ 
+                    time: LONG,
+                    prevTime: LONG
+                });
+                break;
+            case 'very-long':
+                this.setState({ 
+                    time: VERY_LONG,
+                    prevTime: VERY_LONG
+                });
+                break;
+            default:
+                console.log(`Unexpected selection: ${selection}`);
+                break;
+        }
     }
 
     componentDidUpdate() {
@@ -26,7 +74,7 @@ class TimerContainer extends React.Component {
         else if ((this.props.disabled && this.state.active) || this.state.time <= 0) {
             clearInterval(this.state.interval);
             this.setState({ 
-                time: DEFAULT_TIME, 
+                time: this.state.prevTime, 
                 active: false 
             });
             if (this.state.time <= 0) { this.props.toggleWriting(); }
@@ -45,6 +93,7 @@ class TimerContainer extends React.Component {
                     writeTime={this.state.time}
                     started={!this.props.disabled}
                     onClick={this.props.toggleWriting} 
+                    onChange={this.changeTime}
                 />
             </div>
         );

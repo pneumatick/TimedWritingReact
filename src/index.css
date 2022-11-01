@@ -34,6 +34,14 @@ button:active {
   background: rgba(0, 0, 0, 0.342);
 }
 
+select {
+  color: rgb(0, 255, 0);
+  background-color: black;
+  border: solid 2px white;
+  border-radius: 5px;
+  width: 100%;
+}
+
 textarea {
   width: 49.5vw;
   height: 25vh;
@@ -59,7 +67,7 @@ table {
 td {
   width: 250px;
   height: 150px;
-  border: dotted 1px green;
+  border: dotted 1px rgb(0, 255, 0);
   background-color: black;
 }
 
